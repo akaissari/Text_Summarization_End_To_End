@@ -34,4 +34,4 @@ model_predict:
   model_path: artifacts/model_trainer/trained_model
   tokenizer_path: artifacts/model_trainer/trained_tokenizer
   model_ckpt: google/pegasus-cnn_dailymail
-  trained: True
+  trained: False
