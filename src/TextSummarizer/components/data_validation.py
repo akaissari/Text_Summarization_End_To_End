@@ -2,7 +2,7 @@ import os
 from TextSummarizer.logging import logger
 from TextSummarizer.entity import DataValidationConfig
 
-class DataValiadtion:
+class DataValidation:
     def __init__(self, config: DataValidationConfig):
         self.config = config
 
@@ -23,8 +23,9 @@ class DataValiadtion:
                     validation_status = True
                     with open(self.config.STATUS_FILE, 'w') as f:
                         f.write(f"Validation status: {validation_status}")
-
+            logger.info(f"Validation status of the data: {validation_status}")
             return validation_status
         
         except Exception as e:
+            logger.error(f"Something Wrong happened: {str(e)}")
             raise e
