@@ -97,3 +97,14 @@ class ConfigurationManager:
         )
 
         return model_evaluation_config
+    
+    def get_model_predict_config(self) -> ModelPredictionConfig:
+        config = self.config.model_predict
+        model_predict_config = ModelPredictionConfig(
+            model_path= config.model_path,
+            tokenizer_path= config.tokenizer_path,
+            model_ckpt= config.model_ckpt,
+            trained= config.trained,
+        )
+        return model_predict_config
+

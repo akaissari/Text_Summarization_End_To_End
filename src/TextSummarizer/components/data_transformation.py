@@ -29,15 +29,14 @@ class DataTransformation:
 
     def convert(self):
         dataset_samsum = load_from_disk(self.config.data_path)
-        train_subset = dataset_samsum['train'].select(range(10))
-        val_subset = dataset_samsum['validation'].select(range(10))
-        test_subset = dataset_samsum['test'].select(range(10))
-        subset_dict = DatasetDict({
-            'train': train_subset,
-            'validation': val_subset,
-            'test': test_subset
-        })
-
-        dataset_samsum_pt = subset_dict.map(self.convert_examples_to_features, batched = True)
+        # train_subset = dataset_samsum['train'].select(range(10))
+        # val_subset = dataset_samsum['validation'].select(range(10))
+        # test_subset = dataset_samsum['test'].select(range(10))
+        # subset_dict = DatasetDict({
+        #     'train': train_subset,
+        #     'validation': val_subset,
+        #     'test': test_subset
+        # })
+        dataset_samsum_pt = dataset_samsum.map(self.convert_examples_to_features, batched = True)
         dataset_samsum_pt.save_to_disk(os.path.join(self.config.root_dir,"samsum_dataset"))
         logger.info(f"Dataset converted successfully!")

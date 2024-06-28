@@ -29,3 +29,9 @@ model_evaluation:
   model_path: artifacts/model_trainer/trained_model
   tokenizer_path: artifacts/model_trainer/trained_tokenizer
   metric_file_name: artifacts/model_evaluation/metrics.csv
+
+model_predict:
+  model_path: artifacts/model_trainer/trained_model
+  tokenizer_path: artifacts/model_trainer/trained_tokenizer
+  model_ckpt: google/pegasus-cnn_dailymail
+  trained: True
