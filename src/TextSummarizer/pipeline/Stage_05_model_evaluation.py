@@ -3,7 +3,7 @@ from TextSummarizer.components.evaluation import ModelEvaluation
 from TextSummarizer.logging import logger
 
 
-STAGE_NAME = "Data Evaluation"
+STAGE_NAME = "Model Evaluation"
 
 
 class ModelEvaluationPipeline:

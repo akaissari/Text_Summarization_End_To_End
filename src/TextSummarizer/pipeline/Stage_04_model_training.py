@@ -3,7 +3,7 @@ from TextSummarizer.components.model_trainer import ModelTrainer
 from TextSummarizer.logging import logger
 
 
-STAGE_NAME = "Data Training"
+STAGE_NAME = "Model Training"
 
 
 class ModelTrainingPipeline:
